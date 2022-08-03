@@ -3,8 +3,6 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 
-// const { books } = require('../data/books');
-
 describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
