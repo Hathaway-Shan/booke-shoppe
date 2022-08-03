@@ -13,6 +13,10 @@ describe('backend-express-template routes', () => {
     const res = await request(app).get('/books');
     expect(res.body.length).toEqual(5);
   });
+  it('/authors should return a list of authors', async () => {
+    const res = await request(app).get('/authors');
+    expect(res.body.length).toEqual(3);
+  });
 });
 afterAll(() => {
   pool.end();
