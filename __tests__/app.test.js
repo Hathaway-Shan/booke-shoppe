@@ -11,12 +11,9 @@ describe('backend-express-template routes', () => {
   });
   it('/books should return a list of books', async () => {
     const res = await request(app).get('/books');
-    const expected = books.map((book) => {
-      return { id: book.id, title: book.title, released: book.released };
-    });
-    expect(res.body).toEqual(expected);
+    expect(res.body.length).toEqual(5);
   });
-  afterAll(() => {
-    pool.end();
-  });
+});
+afterAll(() => {
+  pool.end();
 });
