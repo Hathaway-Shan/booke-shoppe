@@ -67,7 +67,23 @@ describe('backend-express-template routes', () => {
       pob: expect.any(String),
     });
   });
-});
-afterAll(() => {
-  pool.end();
+  it('#post /books adds new books', async () => {
+    const res = await (
+      await request(app).post('/books')
+    ).send({
+      title: 'Equal Rites',
+      author_name: 'Terry Pratchett',
+      released: 1987,
+    });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      title: expect.any(String),
+      author_name: expect.any(String),
+      released: expect.any(Number),
+    });
+  });
+  afterAll(() => {
+    pool.end();
+  });
 });
