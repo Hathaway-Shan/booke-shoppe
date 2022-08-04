@@ -22,8 +22,17 @@ describe('backend-express-template routes', () => {
       title: 'Eat Pray Love',
       author_name: 'Elizabeth Gilbert',
       released: '2006',
+      authors: [
+        {
+          id: 1,
+          name: 'Elizabeth Gilbert',
+          dob: 'July 18, 1969',
+          pob: 'Waterbury, CT',
+        },
+      ],
     };
     expect(res.body).toEqual(book1);
+    expect(res.body).toHaveProperty('authors');
   });
   it('/authors:id returns a single author info', async () => {
     const res = await request(app).get('/authors/3');
