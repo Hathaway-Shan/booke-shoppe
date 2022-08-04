@@ -34,6 +34,7 @@ describe('backend-express-template routes', () => {
       pob: 'Athens, Greece',
     };
     expect(res.body).toEqual(author3);
+    expect(res.body).toHaveProperty('books');
   });
 });
 afterAll(() => {
