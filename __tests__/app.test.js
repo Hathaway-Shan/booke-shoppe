@@ -18,9 +18,7 @@ describe('backend-express-template routes', () => {
   it('/books/:id returns a single book and author info', async () => {
     const res = await request(app).get('/books/1');
     const book1 = {
-      id: '1',
       title: 'Eat Pray Love',
-      author_name: 'Elizabeth Gilbert',
       released: '2006',
       authors: [
         {
