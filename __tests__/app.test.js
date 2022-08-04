@@ -32,6 +32,14 @@ describe('backend-express-template routes', () => {
       name: 'Plato',
       dob: '424 BC',
       pob: 'Athens, Greece',
+      books: [
+        {
+          id: 5,
+          title: 'The Republic',
+          author_name: 'Plato',
+          released: '375',
+        },
+      ],
     };
     expect(res.body).toEqual(author3);
     expect(res.body).toHaveProperty('books');
