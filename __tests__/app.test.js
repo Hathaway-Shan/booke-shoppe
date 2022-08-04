@@ -25,6 +25,16 @@ describe('backend-express-template routes', () => {
     };
     expect(res.body).toEqual(book1);
   });
+  it('/authors:id returns a single author info', async () => {
+    const res = await request(app).get('/books/3');
+    const author3 = {
+      id: '3',
+      name: 'Plato',
+      dob: '424 BC',
+      pob: 'Athens, Greece',
+    };
+    expect(res.body).toEqual(author3);
+  });
 });
 afterAll(() => {
   pool.end();
