@@ -68,9 +68,7 @@ describe('backend-express-template routes', () => {
     });
   });
   it('#post /books adds new books', async () => {
-    const res = await (
-      await request(app).post('/books')
-    ).send({
+    const res = await request(app).post('/books').send({
       title: 'Equal Rites',
       author_name: 'Terry Pratchett',
       released: 1987,
@@ -80,7 +78,7 @@ describe('backend-express-template routes', () => {
       id: expect.any(String),
       title: expect.any(String),
       author_name: expect.any(String),
-      released: expect.any(Number),
+      released: expect.any(String),
     });
   });
   afterAll(() => {

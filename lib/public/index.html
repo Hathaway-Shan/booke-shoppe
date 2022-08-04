@@ -45,9 +45,16 @@
                 <td class="table-cell p-3 text-center">POST</td>
                 <td class="table-cell p-3">Add a book</td>
                 <td class="table-cell p-3">
-                  <pre class="whitespace-normal text-xs">
-    
+                  <pre class="code">
+{
+                    title: 'Equal Rites',
+                    author_name: 'Terry Pratchett',
+                    released: 1987,
+                  }</pre
+                  >
                 </td>
+              </tr>
+
               <tr class="border-2">
                 <td class="table-cell p-3"><pre>/authors</pre></td>
                 <td class="table-cell p-3 text-center">GET</td>
@@ -66,15 +73,22 @@
                   <a href="/authors/3" target="_blank" class="text-blue-700"
                     >Get Author 3</a
                   >
-            </td>
-          </tr>
-          <tr class="border-2">
-            <td class="table-cell p-3"><pre>/authors</pre></td>
-            <td class="table-cell p-3 text-center">POST</td>
-            <td class="table-cell p-3">Add an author</td>
-            <td class="table-cell p-3">
-              <pre class="code"></pre>
-
+                </td>
+              </tr>
+              <tr class="border-2">
+                <td class="table-cell p-3"><pre>/authors</pre></td>
+                <td class="table-cell p-3 text-center">POST</td>
+                <td class="table-cell p-3">Add an author</td>
+                <td class="table-cell p-3">
+                  <pre class="code">
+{
+                    name: 'Terry Pratchett',
+                    dob: 'April 28, 1948',
+                    pob: 'Beaconsfield, UK',
+                  }</pre
+                  >
+                </td>
+              </tr>
             </td>
           </tr>
         </tbody>
