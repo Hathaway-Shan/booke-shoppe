@@ -53,6 +53,20 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(author3);
     expect(res.body).toHaveProperty('books');
   });
+  it('#post /authors adds new authors', async () => {
+    const res = await request(app).post('/authors').send({
+      name: 'Terry Pratchett',
+      dob: 'April 28, 1948',
+      pob: 'Beaconsfield, UK',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      name: expect.any(String),
+      dob: expect.any(String),
+      pob: expect.any(String),
+    });
+  });
 });
 afterAll(() => {
   pool.end();
